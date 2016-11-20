@@ -64,7 +64,8 @@ span.psw {
 
 <h2 style = "font-family: verdana; color:#555555;"> Escalate Login</h2>
 
-<form action="action_page.php">
+<form action="redirect.php"
+  method = "POST">
   <div class="imgcontainer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Circle-icons-lightbulb.svg/768px-Circle-icons-lightbulb.svg.png" alt="Avatar" class="avatar">
   </div>
@@ -75,7 +76,7 @@ span.psw {
 
     <label><b style="font-family:calibri">Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw"  required >
-           <input type="checkbox" checked="checked"> I am a teacher 
+           <input type="checkbox" name = "teacher" checked="checked"> I am a teacher 
     <button type="submit" style= "background-color: #555555;">Login</button>
 
   </div>

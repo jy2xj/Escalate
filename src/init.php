@@ -28,8 +28,9 @@
 		if ($fileptr) {
     		while (($line = fgets($fileptr)) !== false) {
        			$pieces = explode("#", $line);
+       			$student = rtrim("$pieces[4]");
         		$password = hash("sha256", "$pieces[1]");
-    			$sql = $db->query("INSERT INTO Users VALUES ('$pieces[0]','$password','$pieces[2]','$pieces[3]','$pieces[4]')") or die ("Invalid: " . $db->error);
+    			$sql = $db->query("INSERT INTO Users VALUES ('$pieces[0]','$password','$pieces[2]','$pieces[3]','$student')") or die ("Invalid: " . $db->error);
     		}
     	fclose($fileptr);
 		}
