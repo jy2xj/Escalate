@@ -1,5 +1,6 @@
 <?php
   session_start();
+  //check student session
   if (!isset($_SESSION["student"])) {
     header("Location: login.php");
     exit;
