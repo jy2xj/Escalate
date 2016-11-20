@@ -62,11 +62,11 @@ span.psw {
 </style>
 <body>
 
-<h2 style = "font-family: verdana; color:green;"> Escalate Login</h2>
+<h2 style = "font-family: verdana; color:#555555;"> Escalate Login</h2>
 
 <form action="action_page.php">
   <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Circle-icons-lightbulb.svg/768px-Circle-icons-lightbulb.svg.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
@@ -76,7 +76,7 @@ span.psw {
     <label><b style="font-family:calibri">Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw"  required >
            <input type="checkbox" checked="checked"> I am a teacher 
-    <button type="submit">Login</button>
+    <button type="submit" style= "background-color: #555555;">Login</button>
 
   </div>
 
@@ -85,3 +85,4 @@ span.psw {
 
 </body>
 </html>
+
