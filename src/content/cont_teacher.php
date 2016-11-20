@@ -35,7 +35,7 @@
 	    		difference = info[i]['total_prog'] - info[i]['current_prog'];
 	    		quizzes_needed[i] = difference;
 	    	}
-	    	student_names[arrayLength-1] = "Class Average";
+	    	student_names[arrayLength-1] = "Class Avg";
     		quizzes_taken[arrayLength-1] = String(total/(arrayLength-1));
     		difference = info[0]['total_prog'] - quizzes_taken[arrayLength-1];
     		quizzes_needed[arrayLength-1] = difference;

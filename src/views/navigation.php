@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#"><img margin="0" width="5%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Circle-icons-lightbulb.svg/768px-Circle-icons-lightbulb.svg.png">Escalate</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
