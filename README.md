@@ -21,7 +21,12 @@ A tutoring subpage that
 
 ## Installation
 
-Install Xaamp and start up a Apache Server and MySQL Server.
+Install Xaamp and start up a Apache Server and MySQL Server on the Control Panel of Xaamp. Save our project in the htpdocs folder and run your localhost/escalate. You will be prompted to the initization screen to start our MySQL database. By clicking <u> start here </u> u will enter our login screen.
+</br>
+Currently the only user we have are:</br>
+Username - Password - First Name - Last Name </br>
+jy2xk hello   Josh Ya </br>   jl4xs   fish  John Lin </br>
+em2ep world   Edmund Pan   </br>   rw3gd   pixel  Roman Wang</br>
 
 ## Credits
 
