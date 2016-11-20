@@ -1,0 +1,40 @@
+#mainFooter {
+	background:#222222;
+	color:#FFF;
+	padding:50px;
+}
+
+#footerRights {
+	background:#333333;
+	color:#999;
+	padding:50px;
+}
+
+h1 {
+  margin-left: 15px;
+}
+
+td {
+  font-size: 20;
+  padding: 10px;
+}
+#space {
+  padding:10px;
+  text-align: left;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+#TutorBtn {
+  text-align: center;
+  btn btn-info
+}
+#barGraph {
+  width:100%;
+}
+.progress-bar {
+  float:left;
+}
+
+#test {
+  font-size: 45px;
+}
