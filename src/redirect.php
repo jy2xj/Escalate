@@ -19,7 +19,14 @@
 	    		}
 	    	}
 			else {
-				header("Location: login.php");
+								
+				$_SESSION['invalid'] = "invalid user or password";
+				/*echo '<script language="javascript">';
+				echo 'var answer = confirm(alert("Invalid UserID or Password"))';
+				echo 'if (answer)
+					window.location="login.php"';
+				echo '</script>';*/	
+				header("Location: teacher.php");		
 				exit;
 			}
 		}
@@ -36,6 +43,7 @@
 	    		}
 	    	}
 			else {
+				$_SESSION['invalid'] = "invalid user or password";
 				header("Location: login.php");
 				exit;
 			}

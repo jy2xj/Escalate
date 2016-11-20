@@ -1,5 +1,11 @@
 <?php
   session_start();
+  if (isset($_SESSION["invalid"])) {
+    echo '<script language="javascript">';
+    echo "alert('There is an invalid User ID or Password');";
+    echo "</script>";
+    unset($_SESSION['invalid']);
+  }
   if (isset($_SESSION["student"])) {
     header("Location: student.php");
     exit;
@@ -8,6 +14,8 @@
     header("Location: teacher.php");
     exit;
   }
+
+
 ?>
 <!DOCTYPE html>
 <html>
