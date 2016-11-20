@@ -1,23 +1,35 @@
 # Escalate
 
 HackDuke 2016 </br >
-To assist student and teachers monitor their progress in their school work.
-Students are able to view their quiz grades and compare with class averages.
-Teachers are able to view their entire student class and see their overall progress
+Web Application - PHP, Javascript, HTML/CSS </br>
+</br>
+One major problem in modern classrooms is that teachers only teach at one pace to a class with students with different levels of previous knowledge and skill. This application was created to ensure that students who are having trouble do not fall behind in classes. To do so, this application assists teachers by allowing them to monitor the progress of each student in their school work to determine which students they should focus their time and resources on in class.
+
+Current Features:
+Separate Logins for students and teachers
+Students are able to view their quiz grades and compare with the class averages.
+Teachers are able to view their entire student class and see their overall progress.
+
+Upcoming Features:
+Allow teachers to create activities/assignments inside the application 
+Allow students to complete assignments online to determine which sections students are struggling in.
+A tutoring subpage that
+  Allows students who are behind to request tutoring for the sections they are having trouble with.
+  Allows students who are ahead to become tutors for the sections that they excel in.
+  Matches high-achieving students and lower-achieving students and allows them to schedule meetup times outside of class.
+  Allows the teacher to see who has been matched and when students have scheduled to meet.
 
 ## Installation
 
-Install Apache Tomcat.
-
-
+Install Xaamp and start up a Apache Server and MySQL Server.
 
 ## Credits
 
 Created by: </br>
-John Lin : Georgia Tech 
-Joshua Ya : UVA
-Roman Wong : UVA
-Edmund Pan : UVA
+John Lin : Georgia Tech  </br >
+Joshua Ya : UVA </br>
+Roman Wong : UVA </br>
+Edmund Pan : UVA </br>
 
 
 
