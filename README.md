@@ -1,6 +1,6 @@
 # Escalate
 
-Hack Duke 2016
+HackDuke 2016 </br >
 To assist student and teachers monitor their progress in their school work.
 Students are able to view their quiz grades and compare with class averages.
 Teachers are able to view their entire student class and see their overall progress
