@@ -31,7 +31,7 @@
 	    		// output data of each row
 	    		while($row = $sql->fetch_assoc()) {
         			$_SESSION["student"] = $row["user_id"];
-        			header("Location: student.php");
+						header("Location: student.php");
         			exit;
 	    		}
 	    	}

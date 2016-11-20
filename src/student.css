@@ -1,0 +1,21 @@
+h1 {
+  margin-left: 15px;
+}
+#test {
+  margin-left:  45px;
+  font-size: 45px;
+}
+td {
+  font-size: 20;
+  padding: 10px;
+}
+#space {
+  padding:10px;
+}
+#TutorBtn {
+  text-align: center;
+  btn btn-info
+}
+#barGraph {
+  width:100%;
+}

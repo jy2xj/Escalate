@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if (isset($_SESSION["student"])) {
+    header("Location: student.php");
+    exit;
+  }
+?>
 <!DOCTYPE html>
 <html>
 <style>
@@ -76,7 +83,7 @@ span.psw {
 
     <label><b style="font-family:calibri">Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw"  required >
-           <input type="checkbox" name="teacher" checked="checked"> I am a teacher 
+           <input type="checkbox" name="teacher" checked="checked"> I am a teacher
     <button type="submit" style= "background-color: #555555;">Login</button>
 
   </div>
@@ -86,4 +93,3 @@ span.psw {
 
 </body>
 </html>
-
