@@ -15,6 +15,14 @@
       echo '<td align="center><div style="width:100px;height:30px;border:1px solid #000;background-color:#FF0000';
     }
   }
+  function calculateAverage($arr) {
+    $sum = 0;
+    $count = sizeof($arr);
+    foreach($arr as $value) {
+      $sum += $value;
+    }
+    return $sum/$count;
+  }
  ?>
 
 <html>
@@ -58,10 +66,33 @@ if ($db->connect_error):
   die ("Could not connect to db: " . $db->connect_error);
 endif;
 
+$sqlAvg = "SELECT *
+                FROM quizzes";
+$resultAvg = $db->query($sqlAvg);
+
+if (!$resultAvg) {
+  echo "Could not run query for Average from Database" .mysql_error();
+  exit;
+}
+$counter = 0;
+$stack = array();
+$stack1 = array();
+$stack2 = array();
+$test = array();
+while($num = mysqli_fetch_assoc($resultAvg)) {
+    array_push($stack, $num["Quiz_1"]);
+    array_push($stack1, $num["Quiz_2"]);
+    array_push($stack2, $num["Quiz_3"]);
+    array_push($test, $num["Chapter3_Test"]);
+}
+$avg = calculateAverage($stack);
+$avg1 = calculateAverage($stack1);
+$avg2 = calculateAverage($stack2);
+$avgTest = calculateAverage($test);
+
 $sql = "SELECT Quiz_1, Quiz_2, Quiz_3
           FROM quizzes
           WHERE user_id = '$studentID' ";
-//$sql = "SELECT * FROM quizzes";
 $result = $db->query($sql);
 
 if(!$result) {
@@ -87,12 +118,12 @@ while($row = mysqli_fetch_assoc($result)) {
   echo      '<tr><td id="space" colspan="4" padding="10px"><div id="demo1" class = "collapse">';
   echo '<table id=barGraph><tr><td id="space" colspan="4"><div class="progress-bar progress-bar-success" ';
   echo 'role="progressbar" aria-valuenow=$score aria-valuemin="0" aria-valuemax="100" style="width: '. $score1.'% ">';
-  echo  "Your Score: $score1";
+  echo  "Your Score: $score1%";
   echo ' </div></td></tr>
   <tr><td></td></tr>
-    <tr><td id="space" colspan="4"><div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-      Average: 70%
-    </div></td></tr></table>
+    <tr><td id="space" colspan="4"><div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: '. $avg.'% ">';
+  echo    "Average: $avg%";
+  echo  '</div></td></tr></table>
 </div></td></tr>';
 
   echo    "<tr>";
@@ -107,12 +138,12 @@ while($row = mysqli_fetch_assoc($result)) {
   echo      '<tr><td id="space" colspan="4"><div id="demo2" class = "collapse">';
   echo '<table id=barGraph><tr><td colspan="4"><div class="progress-bar progress-bar-success" ';
   echo 'role="progressbar" aria-valuenow=$score aria-valuemin="0" aria-valuemax="100" style="width: '. $score2.'% ">';
-  echo  "Your Score: $score2";
+  echo  "Your Score: $score2%";
   echo ' </div></td></tr>
     <tr><td></td></tr>
-    <tr><td id="space" colspan="4"><div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-      Average: 70%
-    </div></td></tr></table>
+    <tr><td id="space" colspan="4"><div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:'. $avg1.'% ">';
+  echo    "Average: $avg1%";
+  echo  '</div></td></tr></table>
 </div></td></tr>';
 
   echo         '<td>Quiz 3</td>';
@@ -125,12 +156,12 @@ while($row = mysqli_fetch_assoc($result)) {
   echo      '<tr><td id="space" colspan="4"><div id="demo3" class = "collapse">';
   echo '<table id=barGraph><tr><td colspan="4"><div class="progress-bar progress-bar-success" ';
   echo 'role="progressbar" aria-valuenow=$score aria-valuemin="0" aria-valuemax="100" style="width: '. $score3.'% ">';
-  echo  "Your Score: $score3";
+  echo  "Your Score: $score3%";
   echo ' </div></td></tr>
     <tr><td></td></tr>
-    <tr><td id="space" colspan="4"><div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-      Average: 70%
-    </div></td></tr></table>
+    <tr><td id="space" colspan="4"><div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:'. $avg2.'% ">';
+  echo    "Average: $avg2%";
+  echo  '</div></td></tr></table>
 </div></td></tr>';
   echo "</table>";
   echo "<br>";
