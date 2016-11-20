@@ -20,8 +20,8 @@
 
 		//Create the tables with the correct fields
 		$result = $db->query("create table Users (user_id varchar(30) primary key not null, password varchar(255), first_name char(40) not null, last_name char(40), auth char(40))") or die ("Invalid: " . $db->error);
-		$result = $db->query("create table Students (user_id varchar(30) primary key not null, tutor tinyint)") or die ("Invalid: " . $db->error);
-		$result = $db->query("create table Quizzes (user_id varchar(30) primary key not null, Quiz_1 int, Quiz_2 int, Quiz_3 int, Chapter3_Test int)") or die ("Invalid: " . $db->error);
+		$result = $db->query("create table Students (user_id varchar(30) primary key not null, tutor tinyint, teacher_id varchar(30))") or die ("Invalid: " . $db->error);
+		$result = $db->query("create table Quizzes (user_id varchar(30) primary key not null, Quiz_1 int, Quiz_2 int, Quiz_3 int, Chapter3_Test int, current_prog int, total_prog int)") or die ("Invalid: " . $db->error);
 
 
 		$fileptr = fopen("users.txt", "rw");
@@ -39,7 +39,7 @@
 		if ($fileptr) {
     		while (($line = fgets($fileptr)) !== false) {
        			$pieces = explode("#", $line);
-    			$sql = $db->query("INSERT INTO Quizzes VALUES ('$pieces[0]','$pieces[1]','$pieces[2]','$pieces[3]','$pieces[4]')") or die ("Invalid: " . $db->error);
+    			$sql = $db->query("INSERT INTO Quizzes VALUES ('$pieces[0]','$pieces[1]','$pieces[2]','$pieces[3]','$pieces[4]', '$pieces[5]', '$pieces[6]')") or die ("Invalid: " . $db->error);
     		}
     	fclose($fileptr);
 		}
@@ -48,7 +48,8 @@
 		if ($fileptr) {
     		while (($line = fgets($fileptr)) !== false) {
        			$pieces = explode("#", $line);
-    			$sql = $db->query("INSERT INTO Students VALUES ('$pieces[0]','$pieces[1]')") or die ("Invalid: " . $db->error);
+       			$teacher = rtrim("$pieces[2]");
+    			$sql = $db->query("INSERT INTO Students VALUES ('$pieces[0]','$pieces[1]', '$teacher')") or die ("Invalid: " . $db->error);
     		}
     	fclose($fileptr);
 		}
