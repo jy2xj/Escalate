@@ -6,9 +6,9 @@
 	<body>
 		<?php
 		// Initialize everything in the database that is needed
-		
+
 		session_start();
-		session_unset(); //Unset all sessions 
+		session_unset(); //Unset all sessions
 
 		//Created a new database instance and give an error if failed connection
 		$db = new mysqli('localhost', 'root', '', 'phpmyadmin');
@@ -17,7 +17,7 @@
 		endif;
 
 		$db->query("drop table Users, Students, Quizzes"); //Drop the previously created tables
-		
+
 		//Create the tables with the correct fields
 		$result = $db->query("create table Users (user_id varchar(30) primary key not null, password varchar(255), first_name char(40) not null, last_name char(40), auth char(40))") or die ("Invalid: " . $db->error);
 		$result = $db->query("create table Students (user_id varchar(30) primary key not null, tutor tinyint)") or die ("Invalid: " . $db->error);
