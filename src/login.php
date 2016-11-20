@@ -4,6 +4,10 @@
     header("Location: student.php");
     exit;
   }
+  else if (isset($_SESSION["teacher"])) {
+    header("Location: teacher.php");
+    exit;
+  }
 ?>
 <!DOCTYPE html>
 <html>

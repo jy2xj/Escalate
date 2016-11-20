@@ -138,6 +138,11 @@ while($row = mysqli_fetch_assoc($result)) {
 ?>
 <div id =TutorBtn>
   <button type="button" class="btn btn-info"> Apply to be Tutor </button>
+  <br/><br/>
+  <form action="logout.php"
+  method = "POST">
+  <input type="submit" style="color:blue;width:100;height:49;font-size:20px;" value="Logout"style= "background-color: #ff5151;"></input>
+  </form>
 </div>
 </body>
 </html>

@@ -13,7 +13,7 @@
 			if ($sql->num_rows > 0) {
 	    		// output data of each row
 	    		while($row = $sql->fetch_assoc()) {
-        			$_SESSION["admin"] = $row["user_id"];
+        			$_SESSION["teacher"] = $row["user_id"];
         			header("Location: teacher.php");
         			exit;
 	    		}
