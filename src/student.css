@@ -11,6 +11,9 @@ td {
 }
 #space {
   padding:10px;
+  text-align: left;
+  align-content: flex-start;
+  align-items: flex-start;
 }
 #TutorBtn {
   text-align: center;
@@ -18,4 +21,7 @@ td {
 }
 #barGraph {
   width:100%;
+}
+.progress-bar {
+  float:left;
 }
